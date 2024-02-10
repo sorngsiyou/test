@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body{
+        background: #000;
+    }
+    .hidden {
+        display: none;
+    }
+    .btn-secondary{
+        background-color: #ccc;
+        color: #000;
+    }
+</style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#content1">Deposit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#content2">CRYPTO</a>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="content1">
+        <div class="row">
+          <div class="col-6 col-md-6 col-lg-2">
+            <div class="d-grid gap-2">
+              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-01.png" width="40" height="40" alt=""> MOMO</button>
+              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/g7pay.png" width="40" height="40" alt=""> G7PAY</button>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-2">
+            <div class="d-grid gap-2">
+              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-03.png" width="40" height="40" alt=""> QUÉT MÃ QR</button>
+              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-04.png" width="40" height="40" alt=""> VIETTEL PAY</button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 mt-2">
+            <div class="d-grid gap-2">
+              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-02.png" width="40" height="40" alt=""> <small>CHUYỂN KHOẢN NGÂN HÀNG</small> </button>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 hidden" id="formPayment" >
+          <div class="col-12 col-md-12 col-lg-6">
+              <div class="row">
+                <div class="col-12 pb-3">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Choose Banks</option>
+                      <option value="1">Bank1</option>
+                      <option value="2">Bank1</option>
+                      <option value="3">Bank1</option>
+                    </select>
+                  </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <input type="text" id="depositValue" class="form-control">
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="form-group text-light">=</div>
+                </div>
+                <div class="col-7">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="exchange rate will show here">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 pt-3">
+                <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue(this)">200</button>
+                <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue(this)">500</button>
+                <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue(this)">1000</button>
+                <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue(this)">2000</button>
+                <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue(this)">5000</button>
+              </div>
+              <div class="col-12 pt-3">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Choose Promotion</option>
+                  <option value="1">Promotion1</option>
+                  <option value="2">Promotion2</option>
+                  <option value="3">Promotion3</option>
+                </select>
+              </div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning mt-3 rounded-pill p-4 pt-2 pb-2">Confirm</button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="content2">
+        <div class="row">
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (1).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Binance Coin</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (1).png" width="70" height="70" alt="">
+                    <small class="d-block">Bitcoin Cash</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (2).png" width="70" height="70" alt="">
+                    <small class="d-block">Bitcoin</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (3).png" width="70" height="70" alt="">
+                    <small class="d-block">Dash</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (4).png" width="70" height="70" alt="">
+                    <small class="d-block">EOS</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (5).png" width="70" height="70" alt="">
+                    <small class="d-block">Ethereum</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (6).png" width="70" height="70" alt="">
+                    <small class="d-block">Litecoin</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (7).png" width="70" height="70" alt="">
+                    <small class="d-block">Tron</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (8).png" width="70" height="70" alt="">
+                    <small class="d-block">Monero</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (9).png" width="70" height="70" alt="">
+                    <small class="d-block">Ripple</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (2).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Binance USD</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (3).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Dogecoin</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (4).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Ethereum</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (5).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Shiba Inu</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (6).jpg" width="70" height="70" alt="">
+                    <small class="d-block">Tether</small>
+                </button>
+            </div>
+            <div class="col-4 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+                    <img src="images/crypto/1 (10).png" width="70" height="70" alt="">
+                    <small class="d-block">ZCash</small>
+                </button>
+            </div>
+            
+          </div>
+          <div class="row pt-5 " id="formPayment2" >
+            <div class="col-12 col-md-12 col-lg-6">
+                <div class="row">
+                  <div class="col-12 pb-3">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Choose Banks</option>
+                        <option value="1">Bank1</option>
+                        <option value="2">Bank1</option>
+                        <option value="3">Bank1</option>
+                      </select>
+                    </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <input type="text" id="depositValue2" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-1">
+                    <div class="form-group">=</div>
+                  </div>
+                  <div class="col-7">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="exchange rate will show here">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 pt-3">
+                  <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue2(this)">200</button>
+                  <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue2(this)">500</button>
+                  <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue2(this)">1000</button>
+                  <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue2(this)">2000</button>
+                  <button type="button" class="btn btn-secondary p-4 pt-2 pb-2" onclick="showValue2(this)">5000</button>
+                </div>
+                <div class="col-12 pt-3">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Choose Promotion</option>
+                    <option value="1">Promotion1</option>
+                    <option value="2">Promotion2</option>
+                    <option value="3">Promotion3</option>
+                  </select>
+                </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-warning mt-3 rounded-pill p-4 pt-2 pb-2">Confirm</button>
+             
+            </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bank Type Name</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://static.wixstatic.com/media/5f5043_c1a221e1b93d401c83cbacd3d202169f~mv2.jpg/v1/fill/w_560,h_708,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/QRcode.jpg" alt="" class="img-fluid">
+        <div>Bank Name: <span class="text-danger fw-bold">Bank Account Name</span></div>
+        <div>Bank Name: <span class="text-danger fw-bold">012 345 6789</span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+    function showValue(button) {
+        var inputValue = button.innerText;
+        document.getElementById('depositValue').value = inputValue;
+    }
+    function showValue2(button) {
+        var inputValue2 = button.innerText;
+        document.getElementById('depositValue2').value = inputValue2;
+    }
+    function toggleDiv(paymentDiv) {
+        var div = document.getElementById(paymentDiv);
+        div.style.display = 'block';
+    }
+</script>
+</body>
+
+</html>
