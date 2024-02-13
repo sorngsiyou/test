@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body{
         background: #000;
@@ -17,38 +18,74 @@
         background-color: #ccc;
         color: #000;
     }
+    .goldbg{
+      background: rgb(222,165,15);
+background: linear-gradient(0deg, rgba(222,165,15,1) 0%, rgba(173,134,12,1) 51%, rgba(116,77,9,1) 100%);
+}
+@media only screen and (max-width: 600px) {
+  .col-4{
+    padding: 2px;
+  }
+  .btnbank img{
+    width: 30px;
+    height: 30px;
+  }
+  .btnbank{
+    font-size: x-small;
+  }
+  .btncrypto img{
+    width: 30px;
+    height: 30px;
+  }
+  .btncrypto{
+    font-size: x-small;
+    width: 100%;
+  }
+}
 </style>
 </head>
 
 <body>
+  <div class="container goldbg pt-4 pb-4 text-center text-light d-block d-sm-none">
+    <div class="row">
+      <div class="col-12 ">
+        <div>User Account:xxxxxxxxxx</div>
+        <div>User Balance(VND):1,000,000.00</div>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="button" class="btn btn-outline-warning btn-sm fw-bold"><i class="fa-regular fa-credit-card"></i> Deposit</button>
+        <button type="button" class="btn btn-outline-primary btn-sm fw-bold"><i class="fa-regular fa-credit-card"></i> Withdraw</button>
+      </div>
+    </div>
+  </div>
   <div class="container mt-5">
-    <ul class="nav nav-tabs" id="myTabs">
+    <ul class="nav nav-tabs nav-fill" id="myTabs">
       <li class="nav-item">
-        <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#content1">Deposit</a>
+        <a class="nav-link active text-warning" id="tab1" data-bs-toggle="tab" href="#content1">Deposit</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#content2">CRYPTO</a>
+        <a class="nav-link text-warning" id="tab2" data-bs-toggle="tab" href="#content2">CRYPTO</a>
       </li>
     </ul>
 
     <div class="tab-content mt-2">
       <div class="tab-pane fade show active" id="content1">
         <div class="row">
-          <div class="col-6 col-md-6 col-lg-2">
+          <div class="col-4 col-md-6 col-lg-2">
             <div class="d-grid gap-2">
-              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-01.png" width="40" height="40" alt=""> MOMO</button>
-              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/g7pay.png" width="40" height="40" alt=""> G7PAY</button>
+              <button class="btn btn-warning text-start pt-3 pb-3 btnbank" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-01.png" width="40" height="40" alt=""> MOMO</button>
+              <button class="btn btn-warning text-start pt-3 pb-3 btnbank" onclick="toggleDiv('formPayment')" type="button"><img src="images/g7pay.png" width="40" height="40" alt=""> G7PAY</button>
             </div>
           </div>
-          <div class="col-6 col-md-6 col-lg-2">
+          <div class="col-4 col-md-6 col-lg-2">
             <div class="d-grid gap-2">
-              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-03.png" width="40" height="40" alt=""> QUÉT MÃ QR</button>
-              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-04.png" width="40" height="40" alt=""> VIETTEL PAY</button>
+              <button class="btn btn-warning text-start pt-3 pb-3 btnbank" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-03.png" width="40" height="40" alt=""> QUÉT MÃ QR</button>
+              <button class="btn btn-warning text-start pt-3 pb-3 btnbank" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-04.png" width="40" height="40" alt=""> VIETTEL PAY</button>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3 mt-2">
+          <div class="col-4 col-md-6 col-lg-3">
             <div class="d-grid gap-2">
-              <button class="btn btn-warning text-start pt-3 pb-3" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-02.png" width="40" height="40" alt=""> <small>CHUYỂN KHOẢN NGÂN HÀNG</small> </button>
+              <button class="btn btn-warning text-start pt-3 pb-3 btnbank" onclick="toggleDiv('formPayment')" type="button"><img src="images/ICON-02.png" width="40" height="40" alt="">CHUYỂN...</button>
             </div>
           </div>
         </div>
@@ -99,98 +136,98 @@
       </div>
       <div class="tab-pane fade" id="content2">
         <div class="row">
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (1).jpg" width="70" height="70" alt="">
                     <small class="d-block">Binance Coin</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (1).png" width="70" height="70" alt="">
                     <small class="d-block">Bitcoin Cash</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (2).png" width="70" height="70" alt="">
                     <small class="d-block">Bitcoin</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (3).png" width="70" height="70" alt="">
                     <small class="d-block">Dash</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (4).png" width="70" height="70" alt="">
                     <small class="d-block">EOS</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (5).png" width="70" height="70" alt="">
                     <small class="d-block">Ethereum</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (6).png" width="70" height="70" alt="">
                     <small class="d-block">Litecoin</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (7).png" width="70" height="70" alt="">
                     <small class="d-block">Tron</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (8).png" width="70" height="70" alt="">
                     <small class="d-block">Monero</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (9).png" width="70" height="70" alt="">
                     <small class="d-block">Ripple</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (2).jpg" width="70" height="70" alt="">
                     <small class="d-block">Binance USD</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (3).jpg" width="70" height="70" alt="">
                     <small class="d-block">Dogecoin</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (4).jpg" width="70" height="70" alt="">
                     <small class="d-block">Ethereum</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (5).jpg" width="70" height="70" alt="">
                     <small class="d-block">Shiba Inu</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (6).jpg" width="70" height="70" alt="">
                     <small class="d-block">Tether</small>
                 </button>
             </div>
-            <div class="col-4 col-md-6 col-lg-2 p-1">
-                <button class="btn btn-secondary text-center pt-3 pb-3" type="button">
+            <div class="col-3 col-md-6 col-lg-2 p-1">
+                <button class="btn btn-secondary text-center pt-3 pb-3 btncrypto" type="button">
                     <img src="images/crypto/1 (10).png" width="70" height="70" alt="">
                     <small class="d-block">ZCash</small>
                 </button>
@@ -214,7 +251,7 @@
                     </div>
                   </div>
                   <div class="col-1">
-                    <div class="form-group">=</div>
+                    <div class="form-group text-light">=</div>
                   </div>
                   <div class="col-7">
                     <div class="form-group">
