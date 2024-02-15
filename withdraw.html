@@ -19,16 +19,34 @@
       background-color: #ccc;
       color: #000;
     }
+    .goldbg{
+      background: rgb(222,165,15);
+background: linear-gradient(0deg, rgba(222,165,15,1) 0%, rgba(173,134,12,1) 51%, rgba(116,77,9,1) 100%);
+}
   </style>
 </head>
 
 <body>
-  <div class="container mt-5">
-    <ul class="nav nav-tabs" id="myTabs">
+  <div class="container goldbg pt-4 pb-4 text-center text-light d-block d-sm-none">
+    <div class="row">
+      <div class="col-12 ">
+        <div>User Account:xxxxxxxxxx</div>
+        <div>User Balance(VND):1,000,000.00</div>
+      </div>
+      <div class="col-12 mt-3">
+        <a href="deposit.html" class="btn btn-outline-warning btn-sm fw-bold"><i class="fa-regular fa-credit-card"></i> Deposit</a>
+        <a href="withdraw.html" class="btn btn-outline-primary btn-sm fw-bold"><i class="fa-regular fa-credit-card"></i> Withdraw</a>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-2">
+    <ul class="nav nav-tabs nav-fill p-0" id="myTabs">
       <li class="nav-item">
-        <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#content1">Withdraw</a>
+        <a class="nav-link active text-warning" id="tab1" data-bs-toggle="tab" href="#content1">Withdraw</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link text-warning" id="tab2" data-bs-toggle="tab" href="#content2">Withdraw List</a>
+      </li>
     </ul>
 
     <div class="tab-content mt-2">
@@ -44,7 +62,7 @@
         <div class="row mt-3 p-0">
           <div class="col-12 col-md-12 col-lg-6 p-0">
             <div class="form-group">
-              <label for="amount" class="text-light">ถอนจํานวนเงิน</label>
+              <label for="amount" class="text-light">Withdraw Amount</label>
               <input type="text" id="amount" class="form-control" placeholder="300.00">
             </div>
           </div>
@@ -62,6 +80,15 @@
           </div>
         </div>
       </div>
+
+      <div class="tab-pane fade show active" id="content2">
+        <div class="row">
+          <div class="col-12 p-1">
+            <h1 class="text-light">Withdraw List</h1>
+          </div>
+        </div>
+      </div>
+
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
